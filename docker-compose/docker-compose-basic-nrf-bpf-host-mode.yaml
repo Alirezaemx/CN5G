@@ -114,10 +114,11 @@ services:
         networks:
             public_net:
                 ipv4_address: 192.168.70.133
+        extra_hosts:
+            - "oai-upf:192.168.70.129"
     oai-upf:
         container_name: "oai-upf"
-        #image: oaisoftwarealliance/oai-upf:develop
-        image: rohankharade/oai-upf:latest
+        image: oaisoftwarealliance/oai-upf:develop
         expose:
             - 2152/udp
             - 8805/udp
@@ -136,7 +137,9 @@ services:
             - ALL
         privileged: true
         network_mode: host
-
+        extra_hosts:
+            - "oai-ext-dn:192.168.73.135"
+            - "oai-nrf:192.168.70.130"
     oai-ext-dn:
         privileged: true
         init: true
