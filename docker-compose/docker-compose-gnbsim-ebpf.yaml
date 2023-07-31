@@ -2,7 +2,7 @@ version: '3.8'
 services:
     gnbsim-ebpf:
         container_name: gnbsim-ebpf
-        image: gnbsim:latest
+        image: gnbsim:develop
         privileged: true
         environment:
             - MCC=208
