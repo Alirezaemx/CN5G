@@ -123,7 +123,7 @@ services:
             - 2152/udp
             - 8805/udp
         volumes:
-            - ./conf/basic_nrf_config.yaml:/openair-upf/etc/config.yaml
+            - ./conf/basic_nrf_bpf_host_config.yaml:/openair-upf/etc/config.yaml
         command: ["/openair-upf/bin/oai_upf", "-c", "/openair-upf/etc/config.yaml", "-o"]
         environment:
             - TZ=Europe/Paris
